@@ -3,6 +3,6 @@
     public class Message
     {
         public int Status { get; set; }
-        public Object Result { get; set; }
+        public Object? Result { get; set; }
     }
 }

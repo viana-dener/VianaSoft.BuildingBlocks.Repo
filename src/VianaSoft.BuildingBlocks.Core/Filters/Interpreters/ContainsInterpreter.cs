@@ -1,4 +1,5 @@
 ﻿using System.Linq.Expressions;
+using System.Reflection;
 using VianaSoft.BuildingBlocks.Core.Filters.Models;
 
 namespace VianaSoft.BuildingBlocks.Core.Filters.Interpreters

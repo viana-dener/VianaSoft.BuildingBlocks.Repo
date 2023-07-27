@@ -30,8 +30,8 @@ namespace VianaSoft.BuildingBlocks.Core.Configuration
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = apiSettings.ApiSettings.Issuer,
-                    ValidAudience = apiSettings.ApiSettings.Audience,
+                    ValidIssuer = apiSettings?.ApiSettings.Issuer,
+                    ValidAudience = apiSettings?.ApiSettings.Audience,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(apiSettings.ApiSettings.Secret))
                 };
             });

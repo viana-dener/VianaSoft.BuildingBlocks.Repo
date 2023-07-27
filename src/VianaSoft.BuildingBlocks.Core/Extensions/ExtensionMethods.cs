@@ -9,7 +9,7 @@ namespace VianaSoft.BuildingBlocks.Core.Extensions
 {
     public static class ExtensionMethods
     {
-        public static string FirstCharToUpper(this string data)
+        public static string? FirstCharToUpper(this string data)
         {
             if (string.IsNullOrWhiteSpace(data)) return null;
 

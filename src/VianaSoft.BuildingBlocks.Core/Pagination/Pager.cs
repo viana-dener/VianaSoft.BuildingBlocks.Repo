@@ -6,8 +6,8 @@
         private const int _minItemsPerPage = 10;
         private int page;
         private int itemsPerPage;
-        private string orderBy;
-        private string orderType;
+        private string? orderBy;
+        private string? orderType;
 
         public int Page
         {
@@ -19,12 +19,12 @@
             get { return itemsPerPage <= 0 ? _minItemsPerPage : itemsPerPage > _maxItemsPerPage ? _maxItemsPerPage : itemsPerPage; }
             set { itemsPerPage = value; }
         }
-        public string OrderBy
+        public string? OrderBy
         {
             get { return !string.IsNullOrWhiteSpace(orderBy) ? orderBy : "id"; }
             set { orderBy = value; }
         }
-        public string OrderType
+        public string? OrderType
         {
             get { return !string.IsNullOrWhiteSpace(orderType) && (orderType.ToLower().Equals("asc") || orderType.ToLower().Equals("desc")) ? orderType : "asc"; }
             set { orderType = value; }
