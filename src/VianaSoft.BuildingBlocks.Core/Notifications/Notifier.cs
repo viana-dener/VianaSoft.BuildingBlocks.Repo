@@ -70,7 +70,7 @@ namespace VianaSoft.BuildingBlocks.Core.Notifications
                 Type = "https://tools.ietf.org/html/rfc7231#section-6.5.1",
                 Title = "One or more validation errors occurred.",
                 Status = (int)HttpStatusCode.BadRequest,
-                TraceId = _context.HttpContext.TraceIdentifier,
+                TraceId = _context.HttpContext?.TraceIdentifier,
                 Errors = HasNotifications ? Notifications : null
             };
 
@@ -106,7 +106,7 @@ namespace VianaSoft.BuildingBlocks.Core.Notifications
         {
             if (HasNotifications)
             {
-                return Notifications.FirstOrDefault().TypeError switch
+                return Notifications.FirstOrDefault()?.TypeError switch
                 {
                     TypeError.Error or TypeError.Fatal => HttpStatusCode.InternalServerError,
                     TypeError.Information or TypeError.Warning => HttpStatusCode.BadRequest,
