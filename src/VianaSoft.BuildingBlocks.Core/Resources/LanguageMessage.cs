@@ -161,8 +161,9 @@ namespace VianaSoft.BuildingBlocks.Core.Resources
         public string Exists(bool displayCode = false)
             => displayCode ? $"{_message.GetString("ME00000045 Exists")}" : $"{_message.GetString("ME00000045 Exists").Name[..10]} - {_message.GetString("ME00000045 Exists")}";
 
+
         public string Exists(string value, bool displayCode = false)
-            => displayCode ? $"{_message.GetString("ME00000046 Exists")}" : $"{_message.GetString("ME00000046 Exists").Name[..10]} - {_message.GetString("ME00000046 Exists")}";
+            => displayCode ? $"{string.Format(_message.GetString("ME00000046 Exists"), value)}" : $"{_message.GetString("ME00000046 Exists").Name[..10]} - {string.Format(_message.GetString("ME00000046 Exists"), value)}";
 
         public string NotValid(string value, bool displayCode = false)
             => displayCode ? $"{string.Format(_message.GetString("ME00000047 NotValid"), value)}" : $"{_message.GetString("ME00000047 NotValid").Name[..10]} - {string.Format(_message.GetString("ME00000047 NotValid"), value)}";
