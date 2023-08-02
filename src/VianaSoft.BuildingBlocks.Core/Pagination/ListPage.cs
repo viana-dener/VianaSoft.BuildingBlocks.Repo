@@ -9,6 +9,7 @@
         public int TotalItems { get; set; }
         public int TotalPages { get; set; }
 
+        public ListPage() { }
         public ListPage(IEnumerable<T> items, int page, int itemsPerPage, int totalItems, int totalPages)
         {
             Items = items;
